@@ -41,7 +41,8 @@ def create_printable_images(
         image_size_mm: int,
         size_type: str = 'height',
         spacing_mm: int = 5,
-        output_dir: str = './print_ready/'
+        output_dir: str = './print_ready/',
+        output_mask: str = 'printable_page'
 ):
     if paper_size not in PAPER_SIZES:
         raise ValueError(f"Invalid paper size '{paper_size}'. Choose from {list(PAPER_SIZES.keys())}.")
@@ -111,7 +112,7 @@ def create_printable_images(
                 break
 
         # Save the current page
-        output_path = os.path.join(output_dir, f"printable_page_{page_num + 1}.jpg")
+        output_path = os.path.join(output_dir, f"{output_mask}_{page_num + 1}.jpg")
         canvas.save(output_path, "JPEG")
         print(f"Page {page_num + 1} saved to {output_path}")
 
