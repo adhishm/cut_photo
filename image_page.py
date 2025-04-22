@@ -32,7 +32,8 @@ def check_image_sizes(
 PAPER_SIZES = {
     'a4': (210, 297),
     'a3': (297, 420),
-    'a2': (420, 594)
+    'a3+': (323, 477),
+    'a2': (420, 594),
 }
 
 def create_printable_images(
